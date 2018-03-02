@@ -10,14 +10,14 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone']) &&
 	$message=$_POST['message'];
 	$time=$_POST['time'];
 	
-	$text="Formulario de Contacto Rodina\n\r--------------------------\n\r\n\rNombre: $name\n\rEmail: $email\n\rTeléfono: $phone\n\rHorario de contacto: $time\n\rMensaje: $message";
+	$text="Formulario de Contacto de BianchiLatina.com\n\r--------------------------\n\r\n\rNombre: $name\n\rEmail: $email\n\rTeléfono: $phone\n\rHorario de contacto: $time\n\rMensaje: $message";
 	
-	$mg = new Mailgun("key-0da84e2002fa1cfa2831ad1074129238");
-	$domain = "mg.rodina.com.ar";
+	$mg = new Mailgun("key-9a71aa6d38dce2fe0fcd84d7b89b9cbe");
+	$domain = "edet.com.ar";
 	
-	$mg->sendMessage($domain, array('from'    => 'info@rodina.com.ar',
-									'to'      => 'info@rodina.com.ar',
-									'subject' => 'Contacto Rodina',
+	$mg->sendMessage($domain, array('from'    => 'info@BianchiLatina.com',
+									'to'      => 'bianchilatina@hotmail.com',
+									'subject' => 'Nuevo Cliente para Llamar',
 									'text'    => $text));
 	echo 'sent';
 	exit();
